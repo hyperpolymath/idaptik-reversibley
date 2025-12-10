@@ -1,6 +1,6 @@
-# Idaptik Reversible VM 🔄
+= Idaptik Reversible VM 🔄
 
-**A reversible computation virtual machine implemented in ReScript + Deno**
+*A reversible computation virtual machine implemented in ReScript + Deno*
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![License: Palimpsest](https://img.shields.io/badge/license-Palimpsest%20v0.8-purple.svg)](LICENSE-PALIMPSEST.txt)
@@ -10,67 +10,67 @@
 
 ---
 
-## 🎯 What is Idaptik?
+== 🎯 What is Idaptik?
 
-Idaptik is a **reversible computation** virtual machine where every operation can be **perfectly undone**. It's designed for:
+Idaptik is a *reversible computation* virtual machine where every operation can be *perfectly undone*. It's designed for:
 
-- 🧩 **Logic puzzles** - Solve puzzles by forward and backward execution
-- ↩️ **Undo systems** - Build robust undo/redo functionality
-- 🔬 **Reversible algorithms** - Explore reversible computing concepts
-- 🎓 **Education** - Learn about time-reversible computation
+- 🧩 *Logic puzzles* - Solve puzzles by forward and backward execution
+- ↩️ *Undo systems* - Build robust undo/redo functionality
+- 🔬 *Reversible algorithms* - Explore reversible computing concepts
+- 🎓 *Education* - Learn about time-reversible computation
 
-### Key Concept
+=== Key Concept
 
 ```
 Forward:  x=5  →  [ADD x 3]  →  x=8
 Reverse:  x=8  ←  [UNDO]     ←  x=5  (perfectly restored!)
 ```
 
-Every instruction has an **inverse** that reverses its effect without information loss.
+Every instruction has an *inverse* that reverses its effect without information loss.
 
 ---
 
-## ✨ Features
+== ✨ Features
 
-- ✅ **5 Core Instructions:** ADD, SUB, SWAP, NEGATE, NOOP
-- ✅ **Perfect Reversibility:** Every operation is perfectly undoable
-- ✅ **Type Safety:** ReScript's sound type system prevents errors
-- ✅ **Zero Dependencies:** No npm, no node_modules, just Deno + ReScript
-- ✅ **Puzzle System:** JSON-based puzzle definitions
-- ✅ **CLI Interface:** Full command-line interface with demo and tests
-- ✅ **Comprehensive Build System:** 40+ Just recipes for all tasks
+- ✅ *5 Core Instructions:* ADD, SUB, SWAP, NEGATE, NOOP
+- ✅ *Perfect Reversibility:* Every operation is perfectly undoable
+- ✅ *Type Safety:* ReScript's sound type system prevents errors
+- ✅ *Zero Dependencies:* No npm, no node_modules, just Deno + ReScript
+- ✅ *Puzzle System:* JSON-based puzzle definitions
+- ✅ *CLI Interface:* Full command-line interface with demo and tests
+- ✅ *Comprehensive Build System:* 40+ Just recipes for all tasks
 
 ---
 
-## 🚀 Quick Start
+== 🚀 Quick Start
 
-### Prerequisites
+=== Prerequisites
 
 ```bash
-# Install Deno (JavaScript runtime)
+= Install Deno (JavaScript runtime)
 curl -fsSL https://deno.land/install.sh | sh
 
-# Install ReScript (compiler)
+= Install ReScript (compiler)
 npm install -g rescript
 
-# Install Just (task runner)
+= Install Just (task runner)
 cargo install just   # OR: sudo dnf install just
 ```
 
-### Build & Run
+=== Build & Run
 
 ```bash
-# 1. Check dependencies
+= 1. Check dependencies
 just doctor
 
-# 2. Build the project
+= 2. Build the project
 just build
 
-# 3. Run demonstration
+= 3. Run demonstration
 just demo
 ```
 
-**Expected output:**
+*Expected output:*
 ```
 [INFO] Starting reversible VM demo...
 [INFO] Initial state: x=5, y=3, z=0
@@ -93,82 +93,82 @@ Current State: { x: 5, y: 3, z: 0 }
 
 ---
 
-## 📚 Documentation
+== 📚 Documentation
 
-- **[MIGRATION-GUIDE.md](MIGRATION-GUIDE.md)** - Complete guide from TypeScript to ReScript
-- **[CONVERSION-SUMMARY.md](CONVERSION-SUMMARY.md)** - Detailed conversion report
-- **[justfile](justfile)** - All available commands (run `just help`)
+- *[MIGRATION-GUIDE.md](MIGRATION-GUIDE.md)* - Complete guide from TypeScript to ReScript
+- *[CONVERSION-SUMMARY.md](CONVERSION-SUMMARY.md)* - Detailed conversion report
+- *[justfile](justfile)* - All available commands (run `just help`)
 
 ---
 
-## 🛠️ Usage
+== 🛠️ Usage
 
-### CLI Commands
+=== CLI Commands
 
 ```bash
-# Show help
+= Show help
 deno run --allow-read src/CLI.res.js help
 
-# Run demonstration
+= Run demonstration
 deno run --allow-read src/CLI.res.js demo
 
-# Run tests
+= Run tests
 deno run --allow-read src/CLI.res.js test
 
-# Run puzzle (TODO: implement)
+= Run puzzle (TODO: implement)
 deno run --allow-read src/CLI.res.js run vault_7
 ```
 
-### Build System
+=== Build System
 
 ```bash
-# Core commands
+= Core commands
 just build          # Compile ReScript → JavaScript
 just clean          # Remove artifacts
 just watch          # Auto-rebuild on changes
 
-# Development
+= Development
 just dev            # Development mode
 just run            # Run CLI
 just demo           # Run demo
 just test           # Run tests
 
-# Quality
+= Quality
 just format         # Format code
 just lint           # Lint code
 just verify         # Full verification (build + test + lint)
 just ci             # Complete CI pipeline
 
-# Puzzles
+= Puzzles
 just list-puzzles       # List all puzzles
 just puzzle <name>      # Run specific puzzle
 just create-puzzle <n>  # Create new puzzle
 
-# Information
+= Information
 just status         # Project status
 just stats          # Code statistics
 just help           # Detailed help
 ```
 
-**Aliases:** `b` (build), `c` (clean), `r` (run), `d` (demo), `t` (test), `w` (watch)
+*Aliases:* `b` (build), `c` (clean), `r` (run), `d` (demo), `t` (test), `w` (watch)
 
 ---
 
-## 🧩 Instruction Set
+== 🧩 Instruction Set
 
 | Instruction | Syntax | Operation | Inverse | Example |
 |-------------|--------|-----------|---------|---------|
-| **ADD** | `ADD a b` | `a = a + b` | `a = a - b` | `ADD x y` → x=15 (if x=10, y=5) |
-| **SUB** | `SUB a b` | `a = a - b` | `a = a + b` | `SUB x y` → x=5 (if x=10, y=5) |
-| **SWAP** | `SWAP a b` | swap values | swap again | `SWAP x y` → x=5, y=10 (if x=10, y=5) |
-| **NEGATE** | `NEGATE a` | `a = -a` | negate again | `NEGATE x` → x=-10 (if x=10) |
-| **NOOP** | `NOOP` | (nothing) | (nothing) | `NOOP` → no change |
+| *ADD* | `ADD a b` | `a = a + b` | `a = a - b` | `ADD x y` → x=15 (if x=10, y=5) |
+| *SUB* | `SUB a b` | `a = a - b` | `a = a + b` | `SUB x y` → x=5 (if x=10, y=5) |
+| *SWAP* | `SWAP a b` | swap values | swap again | `SWAP x y` → x=5, y=10 (if x=10, y=5) |
+| *NEGATE* | `NEGATE a` | `a = -a` | negate again | `NEGATE x` → x=-10 (if x=10) |
+| *NOOP* | `NOOP` | (nothing) | (nothing) | `NOOP` → no change |
 
-All instructions are **perfectly reversible** - running the inverse restores the exact previous state.
+All instructions are *perfectly reversible* - running the inverse restores the exact previous state.
 
 ---
 
-## 📁 Project Structure
+== 📁 Project Structure
 
 ```
 idaptik-reversible/
@@ -199,9 +199,9 @@ idaptik-reversible/
 
 ---
 
-## 🎓 Examples
+== 🎓 Examples
 
-### Basic VM Usage
+=== Basic VM Usage
 
 ```rescript
 // Create initial state
@@ -221,7 +221,7 @@ VM.undo(vm)  // Undo SWAP: x = 15, y = 5
 VM.undo(vm)  // Undo ADD: x = 10, y = 5
 ```
 
-### Creating a Puzzle
+=== Creating a Puzzle
 
 ```json
 {
@@ -254,33 +254,33 @@ just puzzle my_puzzle
 
 ---
 
-## 🔧 Technology Stack
+== 🔧 Technology Stack
 
-### Core Technologies
+=== Core Technologies
 
-- **[ReScript](https://rescript-lang.org/)** - Sound type system, compiles to JavaScript
-- **[Deno](https://deno.land/)** - Modern, secure JavaScript runtime
-- **[Just](https://github.com/casey/just)** - Powerful command runner
+- *[ReScript](https://rescript-lang.org/)* - Sound type system, compiles to JavaScript
+- *[Deno](https://deno.land/)* - Modern, secure JavaScript runtime
+- *[Just](https://github.com/casey/just)* - Powerful command runner
 
-### Why This Stack?
+=== Why This Stack?
 
 | Aspect | Benefit |
 |--------|---------|
-| **No Dependencies** | Zero npm packages, no node_modules (saves ~100MB) |
-| **Type Safety** | ReScript's sound types catch errors at compile time |
-| **Security** | Deno's explicit permissions (`--allow-read`, etc.) |
-| **Performance** | Fast compilation, optimized JavaScript output |
-| **Developer Experience** | Excellent error messages, fast feedback loop |
+| *No Dependencies* | Zero npm packages, no node_modules (saves ~100MB) |
+| *Type Safety* | ReScript's sound types catch errors at compile time |
+| *Security* | Deno's explicit permissions (`--allow-read`, etc.) |
+| *Performance* | Fast compilation, optimized JavaScript output |
+| *Developer Experience* | Excellent error messages, fast feedback loop |
 
 ---
 
-## 🧪 Testing
+== 🧪 Testing
 
 ```bash
-# Run all tests
+= Run all tests
 just test
 
-# Expected output:
+= Expected output:
 [INFO] Running instruction tests...
 [SUCCESS] ✓ ADD test passed
 [SUCCESS] ✓ ADD invert test passed
@@ -296,46 +296,46 @@ Tests verify:
 
 ---
 
-## 🤝 Contributing
+== 🤝 Contributing
 
 This is a demonstration project showing ReScript + Deno integration. To extend it:
 
-1. **Add new instructions:** Create `src/core/instructions/MyInstruction.res`
-2. **Add new puzzles:** Create JSON files in `data/puzzles/`
-3. **Extend CLI:** Modify `src/CLI.res`
+1. *Add new instructions:* Create `src/core/instructions/MyInstruction.res`
+2. *Add new puzzles:* Create JSON files in `data/puzzles/`
+3. *Extend CLI:* Modify `src/CLI.res`
 
-### Development Workflow
+=== Development Workflow
 
 ```bash
-# Terminal 1: Watch mode
+= Terminal 1: Watch mode
 just watch
 
-# Terminal 2: Run tests after each change
+= Terminal 2: Run tests after each change
 while true; do just test; sleep 2; done
 
-# Terminal 3: Try changes
+= Terminal 3: Try changes
 just demo
 ```
 
 ---
 
-## 🎯 Roadmap
+== 🎯 Roadmap
 
-### Phase 1: Core (✅ Complete)
+=== Phase 1: Core (✅ Complete)
 - [x] ReScript core modules
 - [x] Basic instructions (ADD, SUB, SWAP, NEGATE, NOOP)
 - [x] CLI interface
 - [x] Test suite
 - [x] Comprehensive build system
 
-### Phase 2: Enhanced Features (📝 TODO)
+=== Phase 2: Enhanced Features (📝 TODO)
 - [ ] Implement puzzle loader
 - [ ] Add more complex instructions (XOR, ROL, ROR, etc.)
 - [ ] Conditional execution
 - [ ] Loop constructs (reversible loops!)
 - [ ] Visualization mode
 
-### Phase 3: Advanced (🔮 Future)
+=== Phase 3: Advanced (🔮 Future)
 - [ ] Web interface (Deno Fresh framework)
 - [ ] Visual debugger with step-through
 - [ ] Puzzle editor
@@ -344,24 +344,24 @@ just demo
 
 ---
 
-## 📖 Reversible Computing Background
+== 📖 Reversible Computing Background
 
-### Theory
+=== Theory
 
 Reversible computing is based on the principle that computation can be performed without losing information. Key concepts:
 
-- **Landauer's Principle:** Irreversible operations dissipate energy
-- **Bennett's Reversible Turing Machine:** Computation can be reversible
-- **Janus Language:** First practical reversible programming language
+- *Landauer's Principle:* Irreversible operations dissipate energy
+- *Bennett's Reversible Turing Machine:* Computation can be reversible
+- *Janus Language:* First practical reversible programming language
 
-### Applications
+=== Applications
 
-- **Quantum Computing:** Quantum gates are inherently reversible
-- **Low-Power Computing:** Reversible circuits use less energy
-- **Debugging:** Perfect undo for debugging complex systems
-- **Cryptography:** Reversible operations in encryption
+- *Quantum Computing:* Quantum gates are inherently reversible
+- *Low-Power Computing:* Reversible circuits use less energy
+- *Debugging:* Perfect undo for debugging complex systems
+- *Cryptography:* Reversible operations in encryption
 
-### Learn More
+=== Learn More
 
 - [Reversible Computing - Wikipedia](https://en.wikipedia.org/wiki/Reversible_computing)
 - [Landauer's Principle](https://en.wikipedia.org/wiki/Landauer%27s_principle)
@@ -369,13 +369,13 @@ Reversible computing is based on the principle that computation can be performed
 
 ---
 
-## 📄 License
+== 📄 License
 
-**Dual Licensed: MIT OR Palimpsest License v0.8**
+*Dual Licensed: MIT OR Palimpsest License v0.8*
 
 This project is dual-licensed - you may use it under either license at your choice:
 
-### Primary License: MIT
+=== Primary License: MIT
 
 Permissive, widely compatible open source license.
 - ✅ Commercial use allowed
@@ -385,7 +385,7 @@ Permissive, widely compatible open source license.
 
 See [LICENSE](LICENSE) for full MIT License text.
 
-### Secondary License: Palimpsest v0.8
+=== Secondary License: Palimpsest v0.8
 
 Audit-grade, consent-aware, provenance-rich license for responsible software development.
 - ✅ Same freedoms as MIT
@@ -395,53 +395,53 @@ Audit-grade, consent-aware, provenance-rich license for responsible software dev
 
 See [LICENSE-PALIMPSEST.txt](LICENSE-PALIMPSEST.txt) for full Palimpsest License text.
 
-### Legacy: AGPL-3.0
+=== Legacy: AGPL-3.0
 
 The original v1.0.0 TypeScript implementation was AGPL-3.0. For compatibility, the AGPL-3.0 text is preserved in [license.txt](license.txt).
 
-**Note:** v2.0.0 (ReScript/Deno) uses MIT OR Palimpsest - much more permissive!
+*Note:* v2.0.0 (ReScript/Deno) uses MIT OR Palimpsest - much more permissive!
 
-### Which License Should I Use?
+=== Which License Should I Use?
 
-**Choose MIT if:**
+*Choose MIT if:*
 - You want maximum compatibility
 - You need a widely-recognized OSS license
 - You prefer simple, battle-tested terms
 
-**Choose Palimpsest if:**
+*Choose Palimpsest if:*
 - You value provenance and audit trails
 - You want ethical use guidelines
 - You're building consent-aware systems
 - You want to support the Rhodium Standard
 
-**In practice:** Both licenses permit the same uses. Pick whichever fits your needs!
+*In practice:* Both licenses permit the same uses. Pick whichever fits your needs!
 
-### Authors & Contributors
+=== Authors & Contributors
 
-- **Joshua & Jonathan Jewell** - Original design and implementation
-- **ReScript/Deno Conversion:** 2025-11-21
+- *Joshua & Jonathan Jewell* - Original design and implementation
+- *ReScript/Deno Conversion:* 2025-11-21
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute.
 
 ---
 
-## 🙏 Acknowledgments
+== 🙏 Acknowledgments
 
-- **ReScript Team** - Excellent type system and compiler
-- **Deno Team** - Modern, secure JavaScript runtime
-- **Just Maintainers** - Powerful command runner
-- **Reversible Computing Community** - Pioneering research
-
----
-
-## 📞 Support
-
-- **Documentation:** See `MIGRATION-GUIDE.md` and `CONVERSION-SUMMARY.md`
-- **Commands:** Run `just help` for all available commands
-- **Issues:** Report at the project repository
+- *ReScript Team* - Excellent type system and compiler
+- *Deno Team* - Modern, secure JavaScript runtime
+- *Just Maintainers* - Powerful command runner
+- *Reversible Computing Community* - Pioneering research
 
 ---
 
-**Built with ❤️ using ReScript + Deno**
+== 📞 Support
+
+- *Documentation:* See `MIGRATION-GUIDE.md` and `CONVERSION-SUMMARY.md`
+- *Commands:* Run `just help` for all available commands
+- *Issues:* Report at the project repository
+
+---
+
+*Built with ❤️ using ReScript + Deno*
 
 *Demonstrating that modern web technologies can be simple, safe, and elegant.*

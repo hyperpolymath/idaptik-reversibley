@@ -1,0 +1,36 @@
+= idaptik-reversibley - Citation Guide
+:toc:
+
+== BibTeX
+
+[source,bibtex]
+----
+@software{idaptik-reversibley_2025,
+  author = {Polymath, Hyper},
+  title = {idaptik-reversibley},
+  year = {2025},
+  url = {https://github.com/hyperpolymath/idaptik-reversibley},
+  license = {AGPL-3.0-or-later}
+}
+----
+
+== Harvard Style
+
+Polymath, H. (2025) _idaptik-reversibley_ [Computer software]. Available at: https://github.com/hyperpolymath/idaptik-reversibley
+
+== OSCOLA
+
+Hyper Polymath, 'idaptik-reversibley' (2025) <https://github.com/hyperpolymath/idaptik-reversibley>
+
+== MLA
+
+Polymath, Hyper. "idaptik-reversibley." 2025, github.com/hyperpolymath/idaptik-reversibley.
+
+== APA 7
+
+Polymath, H. (2025). _idaptik-reversibley_ [Computer software]. GitHub. https://github.com/hyperpolymath/idaptik-reversibley
+
+== See Also
+
+* link:../CITATION.cff[CITATION.cff]
+* link:../codemeta.json[codemeta.json]

@@ -1,0 +1,7 @@
+;; idaptik-reversibley - Guix Channel
+;; Add to ~/.config/guix/channels.scm
+
+(channel
+ (version 0)
+ (url "https://github.com/hyperpolymath/idaptik-reversibley")
+ (branch "main"))
